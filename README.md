@@ -12,4 +12,6 @@ The goal of this is to present a effecient yet elegant way of displaying informa
 When searching for a movie, what data does our user base want? They obviously want the name of the movie, synopsis, year, maybe a poster. Add a tick box to enable displaying the picture.
 
 Testing is done with phpunit
+```
 phpunit --bootstrap tests/bootstrap.php tests/tmdb-api.php
+```
