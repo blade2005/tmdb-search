@@ -7,6 +7,17 @@ p.error {
 }
 
 table, th, td {
-   border: 1px solid black;
-   width: 30%;
+    border: 1px solid black;
+    width: 30%;
+}
+
+table.form, td.form {
+    border-collapse: collapse;
+    border: 0;
+    width: 280px;
+}
+td.submit {
+    border: 0;
+    text-align:center;
+    vertical-align:middle;
 }

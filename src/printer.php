@@ -22,16 +22,47 @@ function search_form()
 {
     $type_opts = array('Movie','Actor');
     echo '    <form name="search" method="get" action="search.php">
-        <input type="edit" size="10" name="searchterm">
-        <br/>
-        <select name="type">';
-    for $type_opts as $opts echo '            <option>',$opts,'</option>
+        <table class="form">
+            <tr>
+                <td class="form">
+                    Search:
+                </td>
+                <td class="form">
+                    <input type="edit" size="10" name="searchterm">
+                </td>
+            </tr>
+            <tr>
+                <td class="form">
+                    Search Type:
+                </td>
+                <td class="form">
+                    <select name="type">
 ';
-    echo '        </select>
-        <br/>
-        <input type="submit" name="search" value="Search">
-        <br/>
-    </form>';
+    foreach ($type_opts as $opts) {
+        echo '                        <option>',$opts,'</option>
+';
+}
+    echo '                    </select>
+                </td>
+            </tr>';
+/*            <tr>
+                <td class="form">
+                    Display Pictures?
+                </td>
+                <td class="form">
+                    <input type="checkbox" name="pictures" value="pictures">
+                </td>
+            </tr>
+*/
+            echo '
+            <tr>
+                <td class="submit" colspan="2">
+                    <input type="submit" name="search" value="Search">
+                </td>
+            </tr>
+        </table
+    </form>
+';
 
 }
 function table_start($th)
