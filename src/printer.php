@@ -1,10 +1,10 @@
 <?php
-function table_start()
+function table_start($th)
 {
     echo '<center>
     <table>
         <th>
-            Movie Results
+            ',$th,'
         </th>
         <tr>
             <td>
@@ -23,18 +23,30 @@ function table_end()
 }
 function print_movieresults($results)
 {
-	table_start();
+	table_start('Movie Results');
     foreach($results as $movie) {
-        echo '                    <li>', $movie->getTitle(), ' (<a href="https://www.themoviedb.org/movie/', $movie->getID(), '">', $movie->getID(), '</a>)</li>';
+        echo '                    <li>',
+        filter_var($movie->getTitle(),FILTER_SANITIZE_STRING),
+        ' (<a href="https://www.themoviedb.org/movie/',
+        $movie->getID(),
+        '">',
+        $movie->getID(),
+        '</a>)</li>';
         print "\n";
     }
     table_end();
 }
 function print_actorresults($results)
 {
-	table_start();
+	table_start('Actor Results');
     foreach($results as $actor) {
-    	echo '                    <li>', $person->getName(), ' (<a href="https://www.themoviedb.org/person/', $person->getID(), '">', $person->getID(), '</a>)</li>';
+    	echo '                    <li>',
+        filter_var($actor->getName(),FILTER_SANITIZE_STRING),
+        ' (<a href="https://www.themoviedb.org/person/',
+        $actor->getID(),
+        '">',
+        $actor->getID(),
+        '</a>)</li>';
         print "\n";
     }
     table_end();
