@@ -28,5 +28,6 @@ class TMDBTest extends PHPUnit_Framework_TestCase
         $actors = $tmdb->searchPerson("johnny knoxville");
         $this->assertCount(1, $actors);
     }
+
 }
 ?>

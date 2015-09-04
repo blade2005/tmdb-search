@@ -1,6 +1,6 @@
 <?php
-    include("./header.php");
     include("./bootstrap.php");
+    print_header();
     $config = parse_ini_file( '../api.ini');
     if (!isset($config['apikey'])) {
         print '<p class="error">Error: Unable to locate api key, please contact administrator</p>';
@@ -34,6 +34,6 @@
             print '<p class="error">Error: Invalid search terms were passed</p>';
         }
     }
-    include("./footer.php");
+    print_footer();
 ?>
 

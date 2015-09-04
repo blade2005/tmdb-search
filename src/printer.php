@@ -1,4 +1,39 @@
 <?php
+function print_header()
+{
+    print '<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="site.css">
+</head>
+<body>
+';
+}
+
+function print_footer()
+{
+    print '
+</body>
+</html>
+';
+}
+
+function search_form()
+{
+    $type_opts = array('Movie','Actor');
+    echo '    <form name="search" method="get" action="search.php">
+        <input type="edit" size="10" name="searchterm">
+        <br/>
+        <select name="type">';
+    for $type_opts as $opts echo '            <option>',$opts,'</option>
+';
+    echo '        </select>
+        <br/>
+        <input type="submit" name="search" value="Search">
+        <br/>
+    </form>';
+
+}
 function table_start($th)
 {
     echo '<center>
